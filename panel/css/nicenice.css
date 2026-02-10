@@ -1,0 +1,265 @@
+/* Base Styling for Buttons */
+.nicebuttons {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    margin: 5px;
+    width: auto;
+}
+
+/* Base Styling for Badges */
+.nicebadges {
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    display: inline-block;
+    color: #fff;
+    margin: 2px;
+    width: auto;
+}
+
+/* Red */
+.nicebuttons-red,
+.nicebadges-red {
+    background-color: #dc3545;
+}
+
+.nicebuttons-red:hover {
+    background-color: #c82333;
+}
+
+.nicebadges-light-red,
+.nicebuttons-light-red {
+    background-color: #f08080;
+    color: #000;
+}
+
+.nicebuttons-light-red:hover {
+    background-color: #e57373;
+}
+
+.nicebadges-dark-red,
+.nicebuttons-dark-red {
+    background-color: #8b0000;
+}
+
+.nicebuttons-dark-red:hover {
+    background-color: #6b0000;
+}
+
+/* Green */
+.nicebuttons-green,
+.nicebadges-green {
+    background-color: #28a745;
+}
+
+.nicebuttons-green:hover {
+    background-color: #218838;
+}
+
+.nicebadges-light-green,
+.nicebuttons-light-green {
+    background-color: #90ee90;
+    color: #000;
+}
+
+.nicebuttons-light-green:hover {
+    background-color: #76d976;
+}
+
+.nicebadges-dark-green,
+.nicebuttons-dark-green {
+    background-color: #006400;
+}
+
+.nicebuttons-dark-green:hover {
+    background-color: #004d00;
+}
+
+/* Blue */
+.nicebuttons-blue,
+.nicebadges-blue {
+    background-color: #007bff;
+}
+
+.nicebuttons-blue:hover {
+    background-color: #0056b3;
+}
+
+.nicebadges-light-blue,
+.nicebuttons-light-blue {
+    background-color: #add8e6;
+    color: #000;
+}
+
+.nicebuttons-light-blue:hover {
+    background-color: #87cefa;
+}
+
+.nicebadges-dark-blue,
+.nicebuttons-dark-blue {
+    background-color: #00008b;
+}
+
+.nicebuttons-dark-blue:hover {
+    background-color: #00006f;
+}
+
+/* Yellow */
+.nicebuttons-yellow,
+.nicebadges-yellow {
+    background-color: #ffc107;
+    color: #000;
+}
+
+.nicebuttons-yellow:hover {
+    background-color: #e0a800;
+}
+
+.nicebadges-light-yellow,
+.nicebuttons-light-yellow {
+    background-color: #fffacd;
+    color: #000;
+}
+
+.nicebuttons-light-yellow:hover {
+    background-color: #fff8b0;
+}
+
+.nicebadges-dark-yellow,
+.nicebuttons-dark-yellow {
+    background-color: #b8860b;
+    color: #000;
+}
+
+.nicebuttons-dark-yellow:hover {
+    background-color: #a07407;
+}
+
+/* Purple */
+.nicebuttons-purple,
+.nicebadges-purple {
+    background-color: #6f42c1;
+}
+
+.nicebuttons-purple:hover {
+    background-color: #5936a1;
+}
+
+.nicebadges-light-purple,
+.nicebuttons-light-purple {
+    background-color: #dda0dd;
+    color: #000;
+}
+
+.nicebuttons-light-purple:hover {
+    background-color: #d291d2;
+}
+
+/* Beige */
+.nicebuttons-beige,
+.nicebadges-beige {
+    background-color: #f5f5dc;
+    color: #000;
+}
+
+.nicebuttons-beige:hover {
+    background-color: #e5e5b3;
+}
+
+/* Brown */
+.nicebuttons-brown,
+.nicebadges-brown {
+    background-color: #8b4513;
+}
+
+.nicebuttons-brown:hover {
+    background-color: #6f3410;
+}
+
+.nicebadges-light-brown,
+.nicebuttons-light-brown {
+    background-color: #a0522d;
+    color: #000;
+}
+
+.nicebuttons-light-brown:hover {
+    background-color: #7e3f22;
+}
+
+.nicebadges-dark-brown,
+.nicebuttons-dark-brown {
+    background-color: #5c4033;
+}
+
+.nicebuttons-dark-brown:hover {
+    background-color: #4b3228;
+}
+
+/* Grey */
+.nicebuttons-grey,
+.nicebadges-grey {
+    background-color: #6c757d;
+}
+
+.nicebuttons-grey:hover {
+    background-color: #545b62;
+}
+
+/* Orange */
+.nicebuttons-orange,
+.nicebadges-orange {
+    background-color: #fd7e14;
+}
+
+.nicebuttons-orange:hover {
+    background-color: #e85a00;
+}
+
+.nicebadges-light-orange,
+.nicebuttons-light-orange {
+    background-color: #ffa07a;
+    color: #000;
+}
+
+.nicebuttons-light-orange:hover {
+    background-color: #ff8c69;
+}
+
+.nicebadges-dark-orange,
+.nicebuttons-dark-orange {
+    background-color: #ff4500;
+}
+
+.nicebuttons-dark-orange:hover {
+    background-color: #cc3700;
+}
+
+/* Turquoise */
+.nicebuttons-turquoise,
+.nicebadges-turquoise {
+    background-color: #40e0d0;
+    color: #000;
+}
+
+.nicebuttons-turquoise:hover {
+    background-color: #37c5b6;
+}
+
+/* Aquamarine */
+.nicebuttons-aquamarine,
+.nicebadges-aquamarine {
+    background-color: #7fffd4;
+    color: #000;
+}
+
+.nicebuttons-aquamarine:hover {
+    background-color: #66dab8;
+}

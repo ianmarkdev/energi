@@ -1,0 +1,26 @@
+# Keine Skriptausführung in Uploads
+#Options -ExecCGI
+#php_flag engine off
+
+#RemoveHandler .php .php3 .php4 .php5 .php7 .php8 .phtml .phar .shtml .cgi .pl .py
+#RemoveType    .php .php3 .php4 .php5 .php7 .php8 .phtml .phar .shtml .cgi .pl .py
+
+#<FilesMatch "(?i)\.(php\d*|phtml|phar|s?html|cgi|pl|py)$">
+#  Require all denied
+#</FilesMatch>
+
+# Doppelte Endungen blocken (bild.jpg.php etc.)
+#RewriteEngine On
+#RewriteRule "(?i)\.(?:jpe?g|png|gif|webp|svg|pdf)\.(?:php\d*|phtml|phar|s?html|cgi|pl|py)$" - [F]
+
+# No script execution
+Options -ExecCGI
+
+# Block PHP execution (FPM-safe)
+<FilesMatch "\.(php\d*|phtml|phar|s?html|cgi|pl|py)$">
+    Require all denied
+</FilesMatch>
+
+# Block double extensions (e.g., image.jpg.php)
+RewriteEngine On
+RewriteRule "(?i)\.(?:jpe?g|png|gif|webp|svg|pdf)\.(?:php\d*|phtml|phar|s?html|cgi|pl|py)$" - [F]

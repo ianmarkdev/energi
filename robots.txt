@@ -1,0 +1,37 @@
+# robots.txt for energiepreise24.com
+# Generated: 2026-01-26
+
+User-agent: *
+
+# Allow all public pages
+Allow: /
+Allow: /index.php
+Allow: /Heizöl-Rechner
+Allow: /Über-uns
+Allow: /FAQ
+Allow: /Bewertungen
+Allow: /Kontakt
+Allow: /Datenschutz
+Allow: /Impressum
+Allow: /AGB
+
+# Disallow admin/panel area
+Disallow: /panel/
+Disallow: /panel
+
+# Disallow internal/ajax files
+Disallow: /addToCart.ajax.php
+Disallow: /trustpilot-proxy.php
+Disallow: /white_*.php
+
+# Disallow checkout process (not useful for indexing)
+Disallow: /checkout
+Disallow: /checkout-schritt-2
+Disallow: /checkout-schritt-3
+Disallow: /bestellung-abgeschlossen
+
+# Disallow error log
+Disallow: /error.log
+
+# Sitemap location
+Sitemap: https://heizoel-vom-profi.de/sitemap.xml

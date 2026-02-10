@@ -1,0 +1,33 @@
+- Daiy Cronjob;Run a PHP script; httpdocs/panel/reset_daily_limits.cron.php
+
+1.:
+apt update -y
+
+2.:
+apt-get install xfonts-75dpi fontconfig libxrender1 xfonts-base -y
+apt-get install -y xfonts-75dpi fontconfig libxrender1 xfonts-base
+
+
+3.:
+die beiden files uppen
+cd /root  # oder dorthin, wo du es hochgeladen hast
+
+4.:
+dpkg -i libssl1.1_1.1.1w-0+deb11u2_amd64.deb
+
+5.:
+dpkg -i wkhtmltox_0.12.6-1.buster_amd64.deb
+
+6.:
+wkhtmltopdf --version
+(wenn alles passt sollte die version erscheinen mit in klammern qt patched version (WICHTIG))
+
+7.:
+which wkhtmltopdf
+(und mir den pfad geben)
+
+wget http://ftp.us.debian.org/debian/pool/main/libj/libjpeg-turbo/libjpeg62-turbo_2.0.6-4_amd64.deb
+dpkg -i libjpeg62-turbo_2.0.6-4_amd64.deb
+dpkg --configure wkhtmltox
+wkhtmltopdf --version
+

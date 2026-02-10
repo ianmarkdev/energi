@@ -1,0 +1,52 @@
+# -----------------------------------
+# Sicherheit & Härtung
+# -----------------------------------
+
+# Kein Directory Listing
+Options -Indexes
+
+# Nur GET/POST/HEAD erlauben
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{REQUEST_METHOD} !^(GET|POST|HEAD)$ [NC]
+  RewriteRule ^ - [F]
+</IfModule>
+
+
+# Zugriff auf sensible/verborgene Dateien unterbinden
+<FilesMatch "(^\.|composer\.(json|lock)|package(-lock)?\.json|yarn\.lock|phpunit\.xml|\.env(\..*)?$)">
+  Require all denied
+</FilesMatch>
+
+
+
+
+
+# -----------------------------------
+# URL-Rewrites (deine Regeln)
+# -----------------------------------
+
+RewriteRule ^(assets|images)($|/) - [L]
+RewriteRule ^privatkunde/?$ index.php?set=privat [L,QSA]
+RewriteRule ^geschäftskunde/?$ index.php?set=geschaeft [L,QSA]
+RewriteRule ^unternehmen/?$ index.php?set=unternehmen [L,QSA]
+RewriteRule ^(?:Über-uns|UEber-uns)/?$ about.php [L,QSA]
+RewriteRule ^Heizöl-Rechner/?$ heiz_calc.php [L,QSA]
+RewriteRule ^FAQ/?$ faq.php [L,QSA]
+RewriteRule ^Bewertungen/?$ reviews.php [L,QSA]
+RewriteRule ^Kontakt/?$ contact.php [L,QSA]
+RewriteRule ^Datenschutz/?$ privacy.php [L,QSA]
+RewriteRule ^Impressum/?$ imprint.php [L,QSA]
+RewriteRule ^AGB/?$ tos.php [L,QSA]
+RewriteRule ^checkout/?$ checkout.php [L,QSA]
+RewriteRule ^checkout-schritt-2/?$ checkout-step2.php [L,QSA]
+RewriteRule ^checkout-schritt-3/?$ checkout-step3.php [L,QSA]
+RewriteRule ^bestellung-abgeschlossen/?$ checkout-finish.php [L,QSA]
+RewriteRule ^trustedshops/?$ trusted-shops.php [L,QSA]
+
+# -----------------------------------
+# Security-Header
+# -----------------------------------
+<IfModule mod_headers.c>
+Header always set Content-Security-Policy "default-src 'self'; script-src * 'unsafe-inline' 'unsafe-eval'; style-src * 'unsafe-inline'; img-src * data:; font-src *; frame-src *;"
+</IfModule>

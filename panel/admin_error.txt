@@ -1,0 +1,101 @@
+[16-Jan-2026 15:31:47 UTC] PHP Warning:  include(../white_config.inc.php): Failed to open stream: No such file or directory in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 31
+[16-Jan-2026 15:31:47 UTC] PHP Warning:  include(): Failed opening '../white_config.inc.php' for inclusion (include_path='.:/opt/plesk/php/8.4/share/pear') in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 31
+[16-Jan-2026 15:31:47 UTC] PHP Warning:  Undefined array key "security_token" in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 35
+[16-Jan-2026 15:31:47 UTC] PHP Warning:  Undefined variable $appSecurityToken in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 35
+[16-Jan-2026 15:31:47 UTC] PHP Warning:  Undefined array key "security_token" in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 63
+[16-Jan-2026 15:31:47 UTC] PHP Warning:  Undefined variable $appSecurityToken in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 63
+[16-Jan-2026 15:31:47 UTC] PHP Warning:  Undefined array key "a" in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 69
+[16-Jan-2026 15:31:47 UTC] PHP Warning:  Undefined array key "do" in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 79
+[16-Jan-2026 15:31:47 UTC] PHP Warning:  Undefined array key "do" in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 108
+[16-Jan-2026 15:31:47 UTC] PHP Warning:  Undefined array key "do" in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 821
+[16-Jan-2026 15:31:47 UTC] PHP Warning:  Undefined array key "settings" in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 2480
+[16-Jan-2026 15:31:47 UTC] PHP Warning:  Undefined array key "settings" in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 2490
+[16-Jan-2026 15:31:47 UTC] PHP Warning:  Undefined array key "settings" in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 2504
+[16-Jan-2026 15:31:47 UTC] PHP Warning:  Undefined variable $cur_Title in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 2537
+[16-Jan-2026 15:31:47 UTC] PHP Warning:  Undefined variable $cur_Title in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 2762
+[16-Jan-2026 15:31:47 UTC] PHP Warning:  Undefined variable $cur_Title in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 2778
+[16-Jan-2026 15:31:47 UTC] PHP Warning:  Undefined array key "settings" in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 2804
+[16-Jan-2026 15:31:47 UTC] PHP Warning:  Undefined array key "settings" in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 3245
+[16-Jan-2026 15:31:47 UTC] PHP Warning:  Undefined array key "settings" in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 3291
+[16-Jan-2026 15:31:47 UTC] PHP Warning:  Undefined array key "do" in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 3489
+[16-Jan-2026 15:31:47 UTC] PHP Warning:  Undefined variable $SQL in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 3594
+[16-Jan-2026 15:31:47 UTC] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php:3594
+Stack trace:
+#0 {main}
+  thrown in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 3594
+[16-Jan-2026 15:31:52 UTC] PHP Warning:  include(../white_config.inc.php): Failed to open stream: No such file or directory in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 31
+[16-Jan-2026 15:31:52 UTC] PHP Warning:  include(): Failed opening '../white_config.inc.php' for inclusion (include_path='.:/opt/plesk/php/8.4/share/pear') in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 31
+[16-Jan-2026 15:31:52 UTC] PHP Warning:  Undefined array key "security_token" in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 35
+[16-Jan-2026 15:31:52 UTC] PHP Warning:  Undefined variable $appSecurityToken in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 35
+[16-Jan-2026 15:31:52 UTC] PHP Warning:  Undefined array key "security_token" in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 63
+[16-Jan-2026 15:31:52 UTC] PHP Warning:  Undefined variable $appSecurityToken in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 63
+[16-Jan-2026 15:31:52 UTC] PHP Warning:  Undefined array key "a" in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 69
+[16-Jan-2026 15:31:52 UTC] PHP Warning:  Undefined array key "do" in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 79
+[16-Jan-2026 15:31:52 UTC] PHP Warning:  Undefined array key "do" in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 108
+[16-Jan-2026 15:31:52 UTC] PHP Warning:  Undefined array key "do" in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 821
+[16-Jan-2026 15:31:52 UTC] PHP Warning:  Undefined array key "settings" in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 2480
+[16-Jan-2026 15:31:52 UTC] PHP Warning:  Undefined array key "settings" in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 2490
+[16-Jan-2026 15:31:52 UTC] PHP Warning:  Undefined array key "settings" in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 2504
+[16-Jan-2026 15:31:52 UTC] PHP Warning:  Undefined variable $cur_Title in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 2537
+[16-Jan-2026 15:31:52 UTC] PHP Warning:  Undefined variable $cur_Title in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 2762
+[16-Jan-2026 15:31:52 UTC] PHP Warning:  Undefined variable $cur_Title in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 2778
+[16-Jan-2026 15:31:52 UTC] PHP Warning:  Undefined array key "settings" in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 2804
+[16-Jan-2026 15:31:52 UTC] PHP Warning:  Undefined array key "settings" in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 3245
+[16-Jan-2026 15:31:52 UTC] PHP Warning:  Undefined array key "settings" in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 3291
+[16-Jan-2026 15:31:52 UTC] PHP Warning:  Undefined array key "do" in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 3489
+[16-Jan-2026 15:31:52 UTC] PHP Warning:  Undefined variable $SQL in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 3594
+[16-Jan-2026 15:31:52 UTC] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php:3594
+Stack trace:
+#0 {main}
+  thrown in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 3594
+[16-Jan-2026 15:31:54 UTC] PHP Warning:  include(../white_config.inc.php): Failed to open stream: No such file or directory in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 31
+[16-Jan-2026 15:31:54 UTC] PHP Warning:  include(): Failed opening '../white_config.inc.php' for inclusion (include_path='.:/opt/plesk/php/8.4/share/pear') in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 31
+[16-Jan-2026 15:31:54 UTC] PHP Warning:  Undefined array key "security_token" in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 35
+[16-Jan-2026 15:31:54 UTC] PHP Warning:  Undefined variable $appSecurityToken in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 35
+[16-Jan-2026 15:31:54 UTC] PHP Warning:  Undefined array key "security_token" in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 63
+[16-Jan-2026 15:31:54 UTC] PHP Warning:  Undefined variable $appSecurityToken in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 63
+[16-Jan-2026 15:31:54 UTC] PHP Warning:  Undefined array key "a" in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 69
+[16-Jan-2026 15:31:54 UTC] PHP Warning:  Undefined array key "do" in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 79
+[16-Jan-2026 15:31:54 UTC] PHP Warning:  Undefined array key "do" in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 108
+[16-Jan-2026 15:31:54 UTC] PHP Warning:  Undefined array key "do" in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 821
+[16-Jan-2026 15:31:54 UTC] PHP Warning:  Undefined array key "settings" in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 2480
+[16-Jan-2026 15:31:54 UTC] PHP Warning:  Undefined array key "settings" in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 2490
+[16-Jan-2026 15:31:54 UTC] PHP Warning:  Undefined array key "settings" in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 2504
+[16-Jan-2026 15:31:54 UTC] PHP Warning:  Undefined variable $cur_Title in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 2537
+[16-Jan-2026 15:31:54 UTC] PHP Warning:  Undefined variable $cur_Title in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 2762
+[16-Jan-2026 15:31:54 UTC] PHP Warning:  Undefined variable $cur_Title in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 2778
+[16-Jan-2026 15:31:54 UTC] PHP Warning:  Undefined array key "settings" in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 2804
+[16-Jan-2026 15:31:54 UTC] PHP Warning:  Undefined array key "settings" in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 3245
+[16-Jan-2026 15:31:54 UTC] PHP Warning:  Undefined array key "settings" in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 3291
+[16-Jan-2026 15:31:54 UTC] PHP Warning:  Undefined array key "do" in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 3489
+[16-Jan-2026 15:31:54 UTC] PHP Warning:  Undefined variable $SQL in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 3594
+[16-Jan-2026 15:31:54 UTC] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php:3594
+Stack trace:
+#0 {main}
+  thrown in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 3594
+[16-Jan-2026 15:31:56 UTC] PHP Warning:  include(../white_config.inc.php): Failed to open stream: No such file or directory in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 31
+[16-Jan-2026 15:31:56 UTC] PHP Warning:  include(): Failed opening '../white_config.inc.php' for inclusion (include_path='.:/opt/plesk/php/8.4/share/pear') in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 31
+[16-Jan-2026 15:31:56 UTC] PHP Warning:  Undefined array key "security_token" in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 35
+[16-Jan-2026 15:31:56 UTC] PHP Warning:  Undefined variable $appSecurityToken in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 35
+[16-Jan-2026 15:31:56 UTC] PHP Warning:  Undefined array key "security_token" in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 63
+[16-Jan-2026 15:31:56 UTC] PHP Warning:  Undefined variable $appSecurityToken in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 63
+[16-Jan-2026 15:31:56 UTC] PHP Warning:  Undefined array key "a" in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 69
+[16-Jan-2026 15:31:56 UTC] PHP Warning:  Undefined array key "do" in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 79
+[16-Jan-2026 15:31:56 UTC] PHP Warning:  Undefined array key "do" in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 108
+[16-Jan-2026 15:31:56 UTC] PHP Warning:  Undefined array key "do" in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 821
+[16-Jan-2026 15:31:56 UTC] PHP Warning:  Undefined array key "settings" in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 2480
+[16-Jan-2026 15:31:56 UTC] PHP Warning:  Undefined array key "settings" in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 2490
+[16-Jan-2026 15:31:56 UTC] PHP Warning:  Undefined array key "settings" in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 2504
+[16-Jan-2026 15:31:56 UTC] PHP Warning:  Undefined variable $cur_Title in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 2537
+[16-Jan-2026 15:31:56 UTC] PHP Warning:  Undefined variable $cur_Title in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 2762
+[16-Jan-2026 15:31:56 UTC] PHP Warning:  Undefined variable $cur_Title in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 2778
+[16-Jan-2026 15:31:56 UTC] PHP Warning:  Undefined array key "settings" in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 2804
+[16-Jan-2026 15:31:56 UTC] PHP Warning:  Undefined array key "settings" in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 3245
+[16-Jan-2026 15:31:56 UTC] PHP Warning:  Undefined array key "settings" in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 3291
+[16-Jan-2026 15:31:56 UTC] PHP Warning:  Undefined array key "do" in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 3489
+[16-Jan-2026 15:31:56 UTC] PHP Warning:  Undefined variable $SQL in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 3594
+[16-Jan-2026 15:31:56 UTC] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php:3594
+Stack trace:
+#0 {main}
+  thrown in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 3594
+[16-Jan-2026 15:44:17 UTC] PHP Warning:  Undefined variable $appSecurityToken in /var/www/vhosts/heizoel-energie.de/httpdocs/panel/index.php on line 35
