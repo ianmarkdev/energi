@@ -31,7 +31,7 @@ include("../white_config.inc.php");
 
 session_start();
 
-if ($_SESSION["security_token"] != $appSecurityToken) {
+if (!isset($_SESSION["security_token"]) || $_SESSION["security_token"] != $appSecurityToken) {
 
   if (!isset($_GET["redirect"])) {
 
@@ -40,7 +40,7 @@ if ($_SESSION["security_token"] != $appSecurityToken) {
 
   if ($_POST) {
 
-    $sentSecurityToken = $_POST["security_token"];
+    $sentSecurityToken = $_POST["security_token"] ?? '';
 
     if ($sentSecurityToken == $appSecurityToken) {
 
@@ -56,7 +56,7 @@ if ($_SESSION["security_token"] != $appSecurityToken) {
   }
 } else if ($_SESSION["security_token"] == $appSecurityToken) {
 
-  if ($_GET["a"] == "sesskill") {
+  if (isset($_GET["a"]) && $_GET["a"] == "sesskill") {
 
     unset($_SESSION['security_token']);
     session_destroy();
@@ -65,7 +65,7 @@ if ($_SESSION["security_token"] != $appSecurityToken) {
   }
 
 
-  if ($_GET["do"] == "del" && isset($_GET["id"])) {
+  if (isset($_GET["do"]) && $_GET["do"] == "del" && isset($_GET["id"])) {
     $delid = $_GET["id"];
     $deloid = $_GET["oid"];
     $deluid = $_GET["uid"];
@@ -94,7 +94,7 @@ if ($_SESSION["security_token"] != $appSecurityToken) {
   }
 
 
-  if ($_GET["do"] == "check" && isset($_GET["id"]) && isset($_GET["oid"]) && isset($_GET["uid"])) {
+  if (isset($_GET["do"]) && $_GET["do"] == "check" && isset($_GET["id"]) && isset($_GET["oid"]) && isset($_GET["uid"])) {
     //MARK ORDER AS IN WORK
     $did = $_GET["id"];
     $doid = $_GET["oid"];
@@ -290,11 +290,11 @@ if ($_SESSION["security_token"] != $appSecurityToken) {
     exit();
   }
 
-  if ($_GET["success"] == 1) {
+  if (isset($_GET["success"]) && $_GET["success"] == 1) {
     $show_Success_Msg = "Sie haben den Bestellstatus für diese Bestellung auf 'Rechnung versendet' markiert und die Rechnung versendet.";
   }
 
-  if ($_GET["do"] == "finish" && isset($_GET["id"]) && isset($_GET["oid"]) && isset($_GET["uid"])) {
+  if (isset($_GET["do"]) && $_GET["do"] == "finish" && isset($_GET["id"]) && isset($_GET["oid"]) && isset($_GET["uid"])) {
     //MARK ORDER AS FINISHED
     $did = $_GET["id"];
     $doid = $_GET["oid"];
@@ -327,11 +327,11 @@ if ($_SESSION["security_token"] != $appSecurityToken) {
     exit();
   }
 
-  if ($_GET["success"] == 2) {
+  if (isset($_GET["success"]) && $_GET["success"] == 2) {
     $show_Success_Msg = "Sie haben den Bestellstatus als abgeschlossen markiert und eine E-Mail versendet.";
   }
 
-  if ($_GET["success"] == 10) {
+  if (isset($_GET["success"]) && $_GET["success"] == 10) {
     $show_Success_Msg = "Sie haben diese Bestellung, den Kunden, die Anschrift und ggf. Rechnung gelöscht.";
   }
 
@@ -598,12 +598,12 @@ if ($_SESSION["security_token"] != $appSecurityToken) {
     $companyPhone = $cur_Telefon;
     $companyEmail = $cur_Mail;
 
-    $customerName = $full_name;
-    $customerAddress = $strasse . ", " . $postleitzahl . " " . $ort;
+    $customerName = $invoice_vorname . " " . $invoice_nachname;
+    $customerAddress = $invoice_strasse . ", " . $invoice_postleitzahl . " " . $invoice_ort;
     $invoiceDate = $appCurrentDate;
     $invoiceNumber = rand(10000, 99999);
 
-    $this_Invoice_VWZ = "RNG-" . $nachname . "-" . $invoiceNumber;
+    $this_Invoice_VWZ = "RNG-" . $invoice_nachname . "-" . $invoiceNumber;
 
     $get_BD = $SQL->prepare("
 						SELECT bd_id, bd_name, bd_iban, bd_bic, daily_used, daily_limit, total_used, total_limit
@@ -717,8 +717,12 @@ EOT;
         $inv_datePart = $inv_parts[0];
         $inv_timePart = $inv_parts[1] ?? '';
         $inv_dt = DateTime::createFromFormat('Y-m-d', $inv_datePart);
-        $inv_formatter = new \IntlDateFormatter('de_DE', \IntlDateFormatter::FULL, \IntlDateFormatter::NONE, 'Europe/Berlin', \IntlDateFormatter::GREGORIAN, 'EEEE, d. MMMM');
-        $inv_deliveryDateLabel = $inv_formatter->format($inv_dt->getTimestamp()) . ' ' . $inv_timePart;
+        if ($inv_dt !== false) {
+          $inv_formatter = new \IntlDateFormatter('de_DE', \IntlDateFormatter::FULL, \IntlDateFormatter::NONE, 'Europe/Berlin', \IntlDateFormatter::GREGORIAN, 'EEEE, d. MMMM');
+          $inv_deliveryDateLabel = $inv_formatter->format($inv_dt->getTimestamp()) . ' ' . $inv_timePart;
+        } else {
+          $inv_deliveryDateLabel = $inv_datePart . ' ' . $inv_timePart;
+        }
 
         $inv_deliveryDateSQL = $invoice_delivery_date;
         $inv_deliveryDateInvoice = $inv_deliveryDateLabel . " Uhr";
@@ -1271,8 +1275,12 @@ Smartphone in Ihre Mobile-Banking-App übernehmen. Bei Fragen wenden Sie sich bi
         $datePart = $parts[0];
         $timePart = $parts[1] ?? '';
         $dt = DateTime::createFromFormat('Y-m-d', $datePart);
-        $formatter = new \IntlDateFormatter('de_DE', \IntlDateFormatter::FULL, \IntlDateFormatter::NONE, 'Europe/Berlin', \IntlDateFormatter::GREGORIAN, 'EEEE, d. MMMM');
-        $deliveryDateLabel = $formatter->format($dt->getTimestamp()) . ' ' . $timePart;
+        if ($dt !== false) {
+          $formatter = new \IntlDateFormatter('de_DE', \IntlDateFormatter::FULL, \IntlDateFormatter::NONE, 'Europe/Berlin', \IntlDateFormatter::GREGORIAN, 'EEEE, d. MMMM');
+          $deliveryDateLabel = $formatter->format($dt->getTimestamp()) . ' ' . $timePart;
+        } else {
+          $deliveryDateLabel = $datePart . ' ' . $timePart;
+        }
 
         $deliveryDateSQL = $d_delivery_date;
         $deliveryDateMail = $deliveryDateLabel;
@@ -1781,7 +1789,7 @@ Smartphone in Ihre Mobile-Banking-App übernehmen. Bei Fragen wenden Sie sich bi
   }
 
 
-  if ($_GET["settings"] == "bd" && $_GET["do"] == "bd-disable" && isset($_GET["bid"])) {
+  if (isset($_GET["settings"]) && $_GET["settings"] == "bd" && isset($_GET["do"]) && $_GET["do"] == "bd-disable" && isset($_GET["bid"])) {
     //DISABLE BANKDROP
     $execute_SQL = $SQL->prepare("UPDATE bd_auswahl SET status = 0 WHERE bd_id = ?");
     $execute_SQL->bind_param("i", $_GET["bid"]);
@@ -1791,7 +1799,7 @@ Smartphone in Ihre Mobile-Banking-App übernehmen. Bei Fragen wenden Sie sich bi
     $show_Success_Msg = "Du hast diesen Bankdrop soeben deaktiviert.";
   }
 
-  if ($_GET["settings"] == "bd" && $_GET["do"] == "bd-enable" && isset($_GET["bid"])) {
+  if (isset($_GET["settings"]) && $_GET["settings"] == "bd" && isset($_GET["do"]) && $_GET["do"] == "bd-enable" && isset($_GET["bid"])) {
     //ENABLE BANKDROP
     $execute_SQL = $SQL->prepare("UPDATE bd_auswahl SET status = 0");
     $execute_SQL->execute();
@@ -1805,7 +1813,7 @@ Smartphone in Ihre Mobile-Banking-App übernehmen. Bei Fragen wenden Sie sich bi
     $show_Success_Msg = "Du hast diesen Bankdrop soeben aktiviert.";
   }
 
-  if ($_GET["settings"] == "bd" && $_GET["do"] == "bd-delete" && isset($_GET["bid"])) {
+  if (isset($_GET["settings"]) && $_GET["settings"] == "bd" && isset($_GET["do"]) && $_GET["do"] == "bd-delete" && isset($_GET["bid"])) {
     //DELETE BANKDROP - CHECK IF BD HAS INVOICES
     $check_For_Active_BDInv = $SQL->prepare("SELECT COUNT(id) FROM kunden_rechnungen WHERE used_bd = ?");
     $check_For_Active_BDInv->bind_param("i", $_GET["bid"]);
@@ -2107,7 +2115,7 @@ Smartphone in Ihre Mobile-Banking-App übernehmen. Bei Fragen wenden Sie sich bi
 
             <?php
 
-            if ($_GET["settings"] == "bd") {
+            if (isset($_GET["settings"]) && $_GET["settings"] == "bd") {
               //BD SETTINGS
 
             ?>
@@ -2120,7 +2128,7 @@ Smartphone in Ihre Mobile-Banking-App übernehmen. Bei Fragen wenden Sie sich bi
 
                 <?php
 
-                if ($_GET["bdaction"] == "add") {
+                if (isset($_GET["bdaction"]) && $_GET["bdaction"] == "add") {
                   //ADD NEW BD
 
                 ?>
@@ -2188,7 +2196,7 @@ Smartphone in Ihre Mobile-Banking-App übernehmen. Bei Fragen wenden Sie sich bi
 
                 <?php
 
-                } else if ($_GET["bdaction"] == "edit" && isset($_GET["bid"])) {
+                } else if (isset($_GET["bdaction"]) && $_GET["bdaction"] == "edit" && isset($_GET["bid"])) {
                   //EDIT BD
                   $edit_bid = $_GET["bid"];
 
@@ -2258,7 +2266,7 @@ Smartphone in Ihre Mobile-Banking-App übernehmen. Bei Fragen wenden Sie sich bi
 
                 <?php
 
-                } else if ($_GET["bdaction"] == "show" && isset($_GET["bid"])) {
+                } else if (isset($_GET["bdaction"]) && $_GET["bdaction"] == "show" && isset($_GET["bid"])) {
                   //SHOW BD INVOICES
                   $show_bid = $_GET["bid"];
 
@@ -2548,7 +2556,7 @@ Smartphone in Ihre Mobile-Banking-App übernehmen. Bei Fragen wenden Sie sich bi
 
             <?php
 
-            } else if ($_GET["settings"] == "main") {
+            } else if (isset($_GET["settings"]) && $_GET["settings"] == "main") {
               //MAIN SETTINGS
 
             ?>
@@ -2594,7 +2602,7 @@ Smartphone in Ihre Mobile-Banking-App übernehmen. Bei Fragen wenden Sie sich bi
 
             <?php
 
-            } else if ($_GET["settings"] == "data") {
+            } else if (isset($_GET["settings"]) && $_GET["settings"] == "data") {
 
             ?>
 
@@ -2789,7 +2797,7 @@ Smartphone in Ihre Mobile-Banking-App übernehmen. Bei Fragen wenden Sie sich bi
 
             <?php
 
-            } else if ($_GET["do"] == "createcontract" && isset($_GET["id"]) && isset($_GET["oid"]) && isset($_GET["uid"])) {
+            } else if (isset($_GET["do"]) && $_GET["do"] == "createcontract" && isset($_GET["id"]) && isset($_GET["oid"]) && isset($_GET["uid"])) {
               //CREATE NEW CONTRACT
               $fetch_This_User_Records = $SQL->prepare("SELECT produkte, gesamtsumme, anschrift, payment_method, creation_date, status FROM kunden_bestellungen WHERE id = ? AND order_id = ? AND user_id = ?");
               $fetch_This_User_Records->bind_param("iii", $_GET["id"], $_GET["oid"], $_GET["uid"]);
@@ -3091,7 +3099,7 @@ Smartphone in Ihre Mobile-Banking-App übernehmen. Bei Fragen wenden Sie sich bi
     <script src="../assets/js/sweetalert2@11.js"></script>
     <script>
       $(document).ready(function() {
-        let successMessage = "<?php echo addslashes($show_Success_Msg); ?>";
+        let successMessage = "<?php echo addslashes($show_Success_Msg ?? ''); ?>";
         if (successMessage) {
           Swal.fire({
             title: "Erfolg!",
@@ -3106,7 +3114,7 @@ Smartphone in Ihre Mobile-Banking-App übernehmen. Bei Fragen wenden Sie sich bi
 
     <script>
       $(document).ready(function() {
-        let errorMessage = "<?php echo addslashes($show_Error_Msg); ?>";
+        let errorMessage = "<?php echo addslashes($show_Error_Msg ?? ''); ?>";
         if (errorMessage) {
           Swal.fire({
             title: "Achtung!",

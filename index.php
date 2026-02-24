@@ -6,23 +6,23 @@
 	$this_Title = "Heizöl günstig kaufen | Online Preisrechner";
 	$this_Home_Active = TRUE;
 
-	session_start();
+	if(!session_id()) { session_start(); }
 
-	if($_GET["set"] == "privat") {
+	if(isset($_GET["set"]) && $_GET["set"] == "privat") {
     $_SESSION["kunde"] = "Privatkunde";
 		$this_Privatkunde_Active = TRUE;
 		$this_Geschäftskunde_Active = FALSE;
 		$this_Unternehmen_Active = FALSE;
 	}
 
-	if($_GET["set"] == "geschaeft") {
+	if(isset($_GET["set"]) && $_GET["set"] == "geschaeft") {
     $_SESSION["kunde"] = "Geschäftskunde";
 		$this_Privatkunde_Active = FALSE;
 		$this_Geschäftskunde_Active = TRUE;
 		$this_Unternehmen_Active = FALSE;
 	}
 
-	if($_GET["set"] == "unternehmen") {
+	if(isset($_GET["set"]) && $_GET["set"] == "unternehmen") {
     $_SESSION["kunde"] = "Unternehmen";
 		$this_Privatkunde_Active = FALSE;
 		$this_Geschäftskunde_Active = FALSE;

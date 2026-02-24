@@ -428,12 +428,12 @@
         </button>
         <div class="collapse navbar-collapse d-none d-xl-flex align-items-center" id="mainNav" style="width:100%;">
             <div class="mx-auto d-flex align-items-center gap-3" style="gap:2rem;">
-                <a class="main-nav-link <?php if($this_Home_Active == TRUE) { echo 'active'; } ?>" href="<?= BASE_URL; ?>index.php">Startseite</a>
-                <a class="main-nav-link <?php if($this_Calc_Active == TRUE) { echo 'active'; } ?>" href="<?= BASE_URL; ?>Heizöl-Rechner">Heizöl-Rechner</a>
-                <a class="main-nav-link <?php if($this_About_Active == TRUE) { echo 'active'; } ?>" href="<?= BASE_URL; ?>Über-uns">Über uns</a>
-                <a class="main-nav-link <?php if($this_FAQ_Active == TRUE) { echo 'active'; } ?>" href="<?= BASE_URL; ?>FAQ">FAQ</a>
-				<a class="main-nav-link <?php if($this_Reviews_Active == TRUE) { echo 'active'; } ?>" href="<?= BASE_URL; ?>Bewertungen">Bewertungen</a>
-                <a class="main-nav-link <?php if($this_Contact_Active == TRUE) { echo 'active'; } ?>" href="<?= BASE_URL; ?>Kontakt">Kontakt</a>
+                <a class="main-nav-link <?php if(!empty($this_Home_Active)) { echo 'active'; } ?>" href="<?= BASE_URL; ?>index.php">Startseite</a>
+                <a class="main-nav-link <?php if(!empty($this_Calc_Active)) { echo 'active'; } ?>" href="<?= BASE_URL; ?>Heizöl-Rechner">Heizöl-Rechner</a>
+                <a class="main-nav-link <?php if(!empty($this_About_Active)) { echo 'active'; } ?>" href="<?= BASE_URL; ?>Über-uns">Über uns</a>
+                <a class="main-nav-link <?php if(!empty($this_FAQ_Active)) { echo 'active'; } ?>" href="<?= BASE_URL; ?>FAQ">FAQ</a>
+				<a class="main-nav-link <?php if(!empty($this_Reviews_Active)) { echo 'active'; } ?>" href="<?= BASE_URL; ?>Bewertungen">Bewertungen</a>
+                <a class="main-nav-link <?php if(!empty($this_Contact_Active)) { echo 'active'; } ?>" href="<?= BASE_URL; ?>Kontakt">Kontakt</a>
             </div>
             <div id="rightContainer" class="d-flex align-items-center ms-4">
                 <a href="mailto:<?=$cur_Mail;?>" id="cleanLink"><?=$cur_Mail;?></a>
